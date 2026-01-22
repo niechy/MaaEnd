@@ -1,0 +1,10 @@
+{
+    "RealTimeTaskMain": {
+        "doc": "实时任务主入口",
+        "next": [
+            "RealTimeAutoSkip",
+            "RealTimeAutoFight",
+            "RealTimeTaskMain"
+        ]
+    }
+}

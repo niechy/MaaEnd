@@ -51,35 +51,136 @@
     ],
     "task": [
         {
+            "name": "📅日常奖励领取",
+            "entry": "DailyRewards",
+            "default_check": true,
+            "description": "领取每日任务奖励"
+        },
+        {
             "name": "📖百科一键已读",
             "entry": "ReadAllWiki",
             "default_check": true,
             "description": "点掉百科所有未读红点，**请在终末地百科首页开始任务**"
         },
         {
-            "name": "📅日常奖励领取",
-            "entry": "DailyRewards",
-            "default_check": true,
-            "description": "领取每日任务奖励"
+            "name": "🤖实时开荒辅助",
+            "entry": "RealTimeTaskMain",
+            "description": "该任务会一直执行，实时监控识别游戏画面，自动按下需要的按键",
+            "option": [
+                "自动剧情",
+                "自动战斗"
+            ]
         }
     ],
     "option": {
-        "任务选项1": {
-            "type": "select",
+        "自动剧情": {
+            "type": "switch",
+            "label": "自动剧情",
             "cases": [
                 {
-                    "name": "文本1",
+                    "name": "Yes",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
+                        "RealTimeAutoSkip": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "自动选择剧情分支",
+                        "加速剧情播放"
+                    ]
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "RealTimeAutoSkip": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动选择剧情分支": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "RealTimeAutoSkipChoose": {
+                            "enabled": true
                         }
                     }
                 },
                 {
-                    "name": "文本2",
+                    "name": "No",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
+                        "RealTimeAutoSkipChoose": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "加速剧情播放": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "RealTimeAutoSkipNext": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "RealTimeAutoSkipNext": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动战斗": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "RealTimeAutoFight": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "自动触发连携技能"
+                    ]
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "RealTimeAutoFight": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动触发连携技能": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "RealTimeAutoFightCombo": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "RealTimeAutoFightCombo": {
+                            "enabled": false
                         }
                     }
                 }
