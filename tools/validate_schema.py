@@ -228,8 +228,8 @@ def main():
         "--exclude-dirs",
         type=str,
         nargs="*",
-        default=[],
-        help="Directories to exclude from validation (default: none)",
+        default=["assets/resource/data"],
+        help="Directories to exclude from validation (default: assets/resource/data)",
     )
     parser.add_argument(
         "--interface-files",
