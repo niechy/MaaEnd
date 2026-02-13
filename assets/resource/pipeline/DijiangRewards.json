@@ -22,7 +22,8 @@
             "[JumpBack]WaitLoadingColor",
             "[JumpBack]TeleportButton",
             "[JumpBack]SelectDijiangTeleport",
-            "[JumpBack]OpenMap"
+            "[JumpBack]OpenMap",
+            "[JumpBack]SceneEnterWorldDijiang"
         ]
     },
     "ControlNexus": {
@@ -1315,6 +1316,15 @@
         }
     },
     "OpenDijiangControlNexus": {
+        "post_wait_freezes": {
+            "time": 50,
+            "roi": [
+                15,
+                437,
+                225,
+                153
+            ]
+        },
         "recognition": {
             "type": "TemplateMatch",
             "param": {
