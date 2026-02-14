@@ -116,10 +116,6 @@
         ]
     },
     "ClickChapterUnreadBadge": {
-        "post_wait_freezes": {
-            "time": 50,
-            "target": [748,673,48,19]
-        },
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -144,7 +140,6 @@
             }
         },
         "next": [
-            "[JumpBack]WikiNextPage",
             "ClickRealUnreadPage",
             "ScrollListForNextUnreadWiki",
             "ClickChapterUnreadBadge",
@@ -152,6 +147,10 @@
         ]
     },
     "ClickRealUnreadPage": {
+        "post_wait_freezes": {
+            "time": 50,
+            "target": [756,675,30,11]
+        },
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -176,6 +175,7 @@
             }
         },
         "next": [
+            "[JumpBack]WikiNextPage",
             "ClickRealUnreadPage",
             "ScrollListForNextUnreadWiki",
             "ClickChapterUnreadBadge",
@@ -232,8 +232,8 @@
         "action": {
             "type": "Swipe",
             "param": {
-                "begin": [700,200],
-                "end": [700, 400],
+                "begin": [700,400],
+                "end": [700, 200],
                 "end_hold": 200
             }
         },
